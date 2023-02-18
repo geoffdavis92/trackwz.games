@@ -3,9 +3,12 @@ import { AIRTABLE_UTILS, MWII_BASE_ID } from "$lib/server/constants";
 import { MEMBERS } from "$lib/constants";
 import { asyncForEach, toCamelCase } from "$lib/server/utils";
 import Airtable from "airtable";
-import dotenv from "dotenv";
+import { AIRTABLE_API_KEY } from "$env/static/private";
 
-dotenv.config();
+// Configure Airtable instance
+Airtable.configure({
+	apiKey: AIRTABLE_API_KEY
+});
 
 const EMPTY_MEMBER_NAME = "(empty)";
 
