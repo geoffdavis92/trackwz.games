@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>Leaderboard - trackwz.games</title>
+</svelte:head>
+
 <script>
 	import { MEMBERS } from "$lib/constants";
 
