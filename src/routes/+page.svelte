@@ -1,12 +1,15 @@
-<h1 class="text-lime-600">Welcome to SvelteKit test</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation, or else.</p>
-
 <script>
 	import { MEMBERS } from "$lib/constants";
 
 	/** @type {import('./$types').PageData} */
 	export let data;
+
+	import img from "$lib/assets/images/wz-logo.png";
 </script>
+
+<div>
+	<img class="mx-auto" src={img} alt="Beliebers Warzone Tracker" />
+</div>
 
 <table>
 	<tr>
