@@ -15,24 +15,26 @@
 	<img class="mx-auto" src={img} alt="Beliebers Warzone Tracker" />
 </div>
 
-<table>
+<table
+	class="bg-slate-100 dark:bg-slate-600 dark:text-white border-collapse w-9/12 mx-auto my-6 text-lg"
+>
 	<tr>
-		<th>Player</th>
-		<th>P</th>
-		<th>W</th>
-		<th>K</th>
-		<th>DMG</th>
-		<th>FC</th>
+		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center">Player</th>
+		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center">P</th>
+		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center">W</th>
+		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center">K</th>
+		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center">DMG</th>
+		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center">FC</th>
 	</tr>
 
 	{#each data.payload as member (member[MEMBERS.NAME])}
 		<tr>
-			<td>{member[MEMBERS.NAME]}</td>
-			<td>{member[MEMBERS.PLAYED]}</td>
-			<td>{member[MEMBERS.WINS]}</td>
-			<td>{member[MEMBERS.KILLS]}</td>
-			<td>{member[MEMBERS.DAMAGE]}</td>
-			<td>{member[MEMBERS.FINAL_CIRCLE]}</td>
+			<td class="px-2 py-1">{member[MEMBERS.NAME]}</td>
+			<td class="px-2 py-1 text-right">{member[MEMBERS.PLAYED]}</td>
+			<td class="px-2 py-1 text-right">{member[MEMBERS.WINS]}</td>
+			<td class="px-2 py-1 text-right">{member[MEMBERS.KILLS]}</td>
+			<td class="px-2 py-1 text-right">{member[MEMBERS.DAMAGE].toLocaleString()}</td>
+			<td class="px-2 py-1 text-right">{member[MEMBERS.FINAL_CIRCLE]}</td>
 		</tr>
 	{/each}
 </table>
