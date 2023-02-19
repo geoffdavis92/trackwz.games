@@ -1,0 +1,18 @@
+const MEMBERS = {
+  NAME: "Name",
+  PLAYED: "P",
+  WINS: "W",
+  KILLS: "K",
+  DAMAGE: "DMG",
+  FINAL_CIRCLE: "FC",
+  WINS_PER_MATCH: "W/M",
+  KILLS_PER_MATCH: "K/M",
+  DAMAGE_PER_MATCH: "DMG/M",
+  FINAL_CIRCLES_PER_MATCH: "FC/M",
+  KILLS_PER_WIN: "K/W",
+  DAMAGE_PER_WIN: "DMG/W",
+  FINAL_CIRCLES_PER_WIN: "FC/W"
+};
+export {
+  MEMBERS as M
+};
