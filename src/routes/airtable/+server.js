@@ -12,13 +12,38 @@ Airtable.configure({
 
 const EMPTY_MEMBER_NAME = "(empty)";
 
-export async function GET() {
+/** @type {import('./$types').RequestHandler} */
+export async function GET({ url }) {
 	const base = Airtable.base(MWII_BASE_ID);
+	const sortByParams = url.searchParams.get("sortBy") ?? false;
+	const selectConfig = {};
 	const members = [];
+
+	// Build sorting array
+	if (sortByParams) {
+		// Multiple search criteria are comma separated
+		const splitCriteria = sortByParams.split(",");
+		const sortArr = splitCriteria
+			// Split strings by spaces/URL encoded "+"
+			.map((str) => str.split(" "))
+			// Build array of criteria objects
+			.reduce((arr, [field, direction = "desc"]) => {
+				// Push formateed field and direction to array
+				arr.push({
+					field: field.toUpperCase(),
+					direction
+				});
+
+				return arr;
+			}, []);
+
+		// Add sort criteria to select config object
+		selectConfig.sort = sortArr;
+	}
 
 	await new Promise(async (resolve, reject) => {
 		base(AIRTABLE_UTILS.TABLE.MEMBERS)
-			.select({})
+			.select(selectConfig)
 			.eachPage(
 				async function page(records, fetchNextPage) {
 					await asyncForEach(records, async (membersRecord) => {
