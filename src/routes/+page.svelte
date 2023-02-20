@@ -1,10 +1,12 @@
 <script>
+	import { getContext, setContext } from "svelte";
 	import { MEMBERS } from "$lib/constants";
 	console.log(MEMBERS);
 
 	/** @type {import('./$types').PageData} */
 	export let data;
-	console.log(data);
+
+	setContext("airtableData", data.payload);
 
 	import img from "$lib/assets/images/wz-logo.png";
 </script>
@@ -50,7 +52,7 @@
 				>Wins</th
 			></tr
 		>
-		{#each data.payload as member (member[MEMBERS.NAME])}
+		{#each getContext("airtableData").sort(({ W: aWins }, { W: bWins }) => bWins - aWins) as member (member[MEMBERS.NAME])}
 			<tr>
 				<td class="px-4 py-1 text-left">{member[MEMBERS.NAME]}</td><td class="px-2 py-1 text-center"
 					>{member[MEMBERS.WINS]}</td
@@ -67,7 +69,7 @@
 				>Win Percentage</th
 			></tr
 		>
-		{#each data.payload as member (member[MEMBERS.NAME])}
+		{#each getContext("airtableData").sort(({ [MEMBERS.WINS_PER_MATCH]: aWPM }, { [MEMBERS.WINS_PER_MATCH]: bWPM }) => bWPM - aWPM) as member (member[MEMBERS.NAME])}
 			<tr>
 				<td class="px-4 py-1 text-left">{member[MEMBERS.NAME]}</td><td class="px-2 py-1 text-center"
 					>{Math.round(member[MEMBERS.WINS_PER_MATCH] * 100)}%</td
@@ -84,7 +86,7 @@
 				>Kills Per Match</th
 			></tr
 		>
-		{#each data.payload as member (member[MEMBERS.NAME])}
+		{#each getContext("airtableData").sort(({ [MEMBERS.KILLS_PER_MATCH]: aKPM }, { [MEMBERS.KILLS_PER_MATCH]: bKPM }) => bKPM - aKPM) as member (member[MEMBERS.NAME])}
 			<tr>
 				<td class="px-4 py-1 text-left">{member[MEMBERS.NAME]}</td><td class="px-2 py-1 text-center"
 					>{Math.round((member[MEMBERS.KILLS_PER_MATCH] + Number.EPSILON) * 10) / 10}</td
@@ -101,7 +103,7 @@
 				>Damage Per Match</th
 			></tr
 		>
-		{#each data.payload as member (member[MEMBERS.NAME])}
+		{#each getContext("airtableData").sort(({ [MEMBERS.DAMAGE_PER_MATCH]: aDPM }, { [MEMBERS.DAMAGE_PER_MATCH]: bDPM }) => bDPM - aDPM) as member (member[MEMBERS.NAME])}
 			<tr>
 				<td class="px-4 py-1 text-left">{member[MEMBERS.NAME]}</td><td class="px-2 py-1 text-center"
 					>{Math.round(member[MEMBERS.DAMAGE_PER_MATCH])}</td
@@ -118,7 +120,7 @@
 				>Kills Per Win</th
 			></tr
 		>
-		{#each data.payload as member (member[MEMBERS.NAME])}
+		{#each getContext("airtableData").sort(({ [MEMBERS.KILLS_PER_WIN]: aKPW }, { [MEMBERS.KILLS_PER_WIN]: bKPW }) => bKPW - aKPW) as member (member[MEMBERS.NAME])}
 			<tr>
 				<td class="px-4 py-1 text-left">{member[MEMBERS.NAME]}</td><td class="px-2 py-1 text-center"
 					>{Math.round((member[MEMBERS.KILLS_PER_WIN] + Number.EPSILON) * 10) / 10}</td
@@ -135,7 +137,7 @@
 				>Damage Per Win</th
 			></tr
 		>
-		{#each data.payload as member (member[MEMBERS.NAME])}
+		{#each getContext("airtableData").sort(({ [MEMBERS.DAMAGE_PER_WIN]: aDPW }, { [MEMBERS.DAMAGE_PER_WIN]: bDPW }) => bDPW - aDPW) as member (member[MEMBERS.NAME])}
 			<tr>
 				<td class="px-4 py-1 text-left">{member[MEMBERS.NAME]}</td><td class="px-2 py-1 text-center"
 					>{Math.round(member[MEMBERS.DAMAGE_PER_WIN])}</td
