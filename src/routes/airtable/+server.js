@@ -29,7 +29,7 @@ export async function GET() {
 						const memberData = {};
 
 						if (
-							membersRecord.get(MEMBERS.NAME) !== EMPTY_MEMBER_NAME ||
+							membersRecord.get(MEMBERS.NAME) !== EMPTY_MEMBER_NAME &&
 							membersRecord.get(MEMBERS.NAME) !== RANDOM_MEMBER_NAME
 						) {
 							// Iterate through Members fields, append to data obj
