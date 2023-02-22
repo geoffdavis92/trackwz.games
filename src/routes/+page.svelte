@@ -1,7 +1,3 @@
-<svelte:head>
-	<title>Leaderboard - trackwz.games</title>
-</svelte:head>
-
 <script>
 	import { MEMBERS } from "$lib/constants";
 
@@ -11,8 +7,16 @@
 	import img from "$lib/assets/images/wz-logo.png";
 </script>
 
+<svelte:head>
+	<title>Leaderboard - trackwz.games</title>
+</svelte:head>
+
 <div>
-	<img class="mx-auto pt-4" src={img} alt="Beliebers Warzone Tracker" />
+	<img
+		class="mx-auto pt-4 drop-shadow-[0_0_5px_rgba(255,255,255,0.5)] hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] transition-all duration-400"
+		src={img}
+		alt="Beliebers Warzone Tracker"
+	/>
 </div>
 
 <table
