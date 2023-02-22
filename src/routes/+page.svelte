@@ -12,7 +12,7 @@
 </script>
 
 <div>
-	<img class="mx-auto" src={img} alt="Beliebers Warzone Tracker" />
+	<img class="mx-auto pt-4" src={img} alt="Beliebers Warzone Tracker" />
 </div>
 
 <table
@@ -38,3 +38,12 @@
 		</tr>
 	{/each}
 </table>
+
+<style>
+	:global(body) {
+		background-color: #192214;
+		background: linear-gradient(rgba(27, 20, 0, 0.808), rgba(27, 20, 0, 0.808)),
+			url("../lib/assets/images/background-pattern.jpg");
+		background-size: 70%;
+	}
+</style>
