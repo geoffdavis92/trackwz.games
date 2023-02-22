@@ -10,7 +10,11 @@ Airtable.configure({
 	apiKey: AIRTABLE_API_KEY
 });
 
+// When playing quads without a full 4 member squad
 const EMPTY_MEMBER_NAME = "(empty)";
+
+// When playing with a random via squad fill
+const RANDOM_MEMBER_NAME = "(random)";
 
 export async function GET() {
 	const base = Airtable.base(MWII_BASE_ID);
@@ -24,7 +28,10 @@ export async function GET() {
 					await asyncForEach(records, async (membersRecord) => {
 						const memberData = {};
 
-						if (membersRecord.get(MEMBERS.NAME) !== EMPTY_MEMBER_NAME) {
+						if (
+							membersRecord.get(MEMBERS.NAME) !== EMPTY_MEMBER_NAME &&
+							membersRecord.get(MEMBERS.NAME) !== RANDOM_MEMBER_NAME
+						) {
 							// Iterate through Members fields, append to data obj
 							Object.values(MEMBERS).forEach((memberFieldId) => {
 								memberData[toCamelCase(memberFieldId)] = membersRecord.get(memberFieldId);
