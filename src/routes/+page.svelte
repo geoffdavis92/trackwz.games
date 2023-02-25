@@ -8,7 +8,7 @@
 
 	setContext("airtableData", data.payload);
 
-	import img from "$lib/assets/images/wz-logo.png";
+	import img from "$lib/assets/images/wz-logo-v2.png";
 </script>
 
 <svelte:head>
@@ -24,15 +24,15 @@
 </div>
 
 <table
-	class="bg-slate-100 dark:bg-slate-600 dark:text-white border-collapse w-9/12 mx-auto my-6 text-lg"
+	class="bg-slate-100 dark:bg-slate-600 dark:text-white border-collapse w-9/12 mx-auto my-6 text-lg rounded-lg shadow-[0_35px_60px_-15px_rgba(0,0,0,0.7)]"
 >
 	<tr>
-		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center">Player</th>
-		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center">P</th>
-		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center">W</th>
-		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center">K</th>
-		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center">DMG</th>
-		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center">FC</th>
+		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center rounded-tl-lg">Player</th>
+		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center ">P</th>
+		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center ">W</th>
+		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center ">K</th>
+		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center ">DMG</th>
+		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center rounded-tr-lg">FC</th>
 	</tr>
 
 	{#each data.payload as member (member[MEMBERS.NAME])}
@@ -49,7 +49,7 @@
 
 <div class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-2">
 	<table
-		class="bg-slate-100 dark:bg-slate-600 dark:text-white border-collapse w-9/12 mx-auto my-6 text-lg rounded-lg shadow-[0_35px_60px_-15px_rgba(0,0,0,0.7)] hover:scale-110 transition-all duration-300 hover:shadow-[0_35px_60px_-10px_rgba(0,0,0,0.7)]"
+		class="bg-slate-100 dark:bg-slate-600 dark:text-white border-collapse w-9/12 mx-auto my-6 text-lg rounded-lg shadow-[0_35px_60px_-15px_rgba(0,0,0,0.7)]"
 	>
 		<tr
 			><th colspan="2" class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center rounded-t-lg"
@@ -66,7 +66,7 @@
 	</table>
 
 	<table
-		class="bg-slate-100 dark:bg-slate-600 dark:text-white border-collapse w-9/12 mx-auto my-6 text-lg rounded-lg shadow-[0_35px_60px_-15px_rgba(0,0,0,0.7)] hover:scale-110 transition-all duration-300 hover:shadow-[0_35px_60px_-10px_rgba(0,0,0,0.7)]"
+		class="bg-slate-100 dark:bg-slate-600 dark:text-white border-collapse w-9/12 mx-auto my-6 text-lg rounded-lg shadow-[0_35px_60px_-15px_rgba(0,0,0,0.7)]"
 	>
 		<tr
 			><th colspan="2" class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center rounded-t-lg"
@@ -83,7 +83,7 @@
 	</table>
 
 	<table
-		class="bg-slate-100 dark:bg-slate-600 dark:text-white border-collapse w-9/12 mx-auto my-6 text-lg rounded-lg shadow-[0_35px_60px_-15px_rgba(0,0,0,0.7)] hover:scale-110 transition-all duration-300 hover:shadow-[0_35px_60px_-10px_rgba(0,0,0,0.7)]"
+		class="bg-slate-100 dark:bg-slate-600 dark:text-white border-collapse w-9/12 mx-auto my-6 text-lg rounded-lg shadow-[0_35px_60px_-15px_rgba(0,0,0,0.7)]"
 	>
 		<tr
 			><th colspan="2" class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center rounded-t-lg"
@@ -100,7 +100,7 @@
 	</table>
 
 	<table
-		class="bg-slate-100 dark:bg-slate-600 dark:text-white border-collapse w-9/12 mx-auto my-6 text-lg rounded-lg shadow-[0_35px_60px_-15px_rgba(0,0,0,0.7)] hover:scale-110 transition-all duration-300 hover:shadow-[0_35px_60px_-10px_rgba(0,0,0,0.7)]"
+		class="bg-slate-100 dark:bg-slate-600 dark:text-white border-collapse w-9/12 mx-auto my-6 text-lg rounded-lg shadow-[0_35px_60px_-15px_rgba(0,0,0,0.7)]"
 	>
 		<tr
 			><th colspan="2" class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center rounded-t-lg"
@@ -117,7 +117,7 @@
 	</table>
 
 	<table
-		class="bg-slate-100 dark:bg-slate-600 dark:text-white border-collapse w-9/12 mx-auto my-6 text-lg rounded-lg shadow-[0_35px_60px_-15px_rgba(0,0,0,0.7)] hover:scale-110 transition-all duration-300 hover:shadow-[0_35px_60px_-10px_rgba(0,0,0,0.7)]"
+		class="bg-slate-100 dark:bg-slate-600 dark:text-white border-collapse w-9/12 mx-auto my-6 text-lg rounded-lg shadow-[0_35px_60px_-15px_rgba(0,0,0,0.7)]"
 	>
 		<tr
 			><th colspan="2" class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center rounded-t-lg"
@@ -134,7 +134,7 @@
 	</table>
 
 	<table
-		class="bg-slate-100 dark:bg-slate-600 dark:text-white border-collapse w-9/12 mx-auto my-6 text-lg rounded-lg shadow-[0_35px_60px_-15px_rgba(0,0,0,0.7)] hover:scale-110 transition-all duration-300 hover:shadow-[0_35px_60px_-10px_rgba(0,0,0,0.7)]"
+		class="bg-slate-100 dark:bg-slate-600 dark:text-white border-collapse w-9/12 mx-auto my-6 text-lg rounded-lg shadow-[0_35px_60px_-15px_rgba(0,0,0,0.7)]"
 	>
 		<tr
 			><th colspan="2" class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center rounded-t-lg"
