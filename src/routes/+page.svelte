@@ -27,19 +27,22 @@
 >
 	<tr>
 		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center rounded-tl-lg"
-			><a href="/">Player</a></th
-		>
-		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center "><a href="/?sortBy=p">P</a></th
-		>
-		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center "><a href="/?sortBy=w">W</a></th
-		>
-		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center "><a href="/?sortBy=k">K</a></th
+			><a href="/" data-sveltekit-noscroll>Player</a></th
 		>
 		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center "
-			><a href="/?sortBy=dmg">DMG</a></th
+			><a href="/?sortBy=p" data-sveltekit-noscroll>P</a></th
+		>
+		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center "
+			><a href="/?sortBy=w" data-sveltekit-noscroll>W</a></th
+		>
+		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center "
+			><a href="/?sortBy=k" data-sveltekit-noscroll>K</a></th
+		>
+		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center "
+			><a href="/?sortBy=dmg" data-sveltekit-noscroll>DMG</a></th
 		>
 		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center rounded-tr-lg"
-			><a href="/?sortBy=fc">FC</a></th
+			><a href="/?sortBy=fc" data-sveltekit-noscroll>FC</a></th
 		>
 	</tr>
 
