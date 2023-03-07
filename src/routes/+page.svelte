@@ -26,12 +26,24 @@
 	class="bg-slate-100 dark:bg-slate-600 dark:text-white border-collapse w-9/12 mx-auto my-6 text-lg rounded-lg shadow-[0_35px_60px_-15px_rgba(0,0,0,0.7)]"
 >
 	<tr>
-		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center rounded-tl-lg">Player</th>
-		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center ">P</th>
-		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center ">W</th>
-		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center ">K</th>
-		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center ">DMG</th>
-		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center rounded-tr-lg">FC</th>
+		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center rounded-tl-lg"
+			><a href="/" data-sveltekit-noscroll>Player</a></th
+		>
+		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center "
+			><a href="/?sortBy=p" data-sveltekit-noscroll>P</a></th
+		>
+		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center "
+			><a href="/?sortBy=w" data-sveltekit-noscroll>W</a></th
+		>
+		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center "
+			><a href="/?sortBy=k" data-sveltekit-noscroll>K</a></th
+		>
+		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center "
+			><a href="/?sortBy=dmg" data-sveltekit-noscroll>DMG</a></th
+		>
+		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center rounded-tr-lg"
+			><a href="/?sortBy=fc" data-sveltekit-noscroll>FC</a></th
+		>
 	</tr>
 
 	{#each data.payload as member (member[MEMBERS.NAME])}
