@@ -17,7 +17,7 @@
 
 <div>
 	<img
-		class="mx-auto pt-4 drop-shadow-[0_0_5px_rgba(255,255,255,0.5)] hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] transition-all duration-400"
+		class="mx-auto pt-4 px-20 drop-shadow-[0_0_5px_rgba(255,255,255,0.5)] hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] transition-all duration-400"
 		src={img}
 		alt="Beliebers Warzone Tracker"
 	/>
@@ -157,5 +157,10 @@
 		background: linear-gradient(rgba(27, 20, 0, 0.808), rgba(27, 20, 0, 0.808)),
 			url("../lib/assets/images/background-pattern.jpg");
 		background-size: 70%;
+	}
+	@media only screen and (max-width: 800px) {
+		:global(body) {
+			background-size: 190%;
+		}
 	}
 </style>
