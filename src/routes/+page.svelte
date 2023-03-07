@@ -1,7 +1,6 @@
 <script>
 	import { getContext, setContext } from "svelte";
 	import { MEMBERS } from "$lib/constants";
-	console.log(MEMBERS);
 
 	/** @type {import('./$types').PageData} */
 	export let data;
@@ -17,7 +16,7 @@
 
 <div>
 	<img
-		class="mx-auto pt-4 drop-shadow-[0_0_5px_rgba(255,255,255,0.5)] hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] transition-all duration-400"
+		class="mx-auto pt-4 px-20 drop-shadow-[0_0_5px_rgba(255,255,255,0.5)] hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] transition-all duration-400"
 		src={img}
 		alt="Beliebers Warzone Tracker"
 	/>
@@ -156,6 +155,11 @@
 		background-color: #192214;
 		background: linear-gradient(rgba(27, 20, 0, 0.808), rgba(27, 20, 0, 0.808)),
 			url("../lib/assets/images/background-pattern.jpg");
-		background-size: 70%;
+		background-size: 190%;
+	}
+	@media only screen and (min-width: 800px) {
+		:global(body) {
+			background-size: 70%;
+		}
 	}
 </style>
