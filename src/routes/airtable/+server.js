@@ -32,9 +32,17 @@ export async function GET({ url }) {
 			.map((str) => str.split(" "))
 			// Build array of criteria objects
 			.reduce((arr, [field, direction = "desc"]) => {
+				let safeFieldName;
+
+				if (Object.values(MEMBERS).includes(field.toUpperCase())) {
+					safeFieldName = field.toUpperCase();
+				} else {
+					safeFieldName = field;
+				}
+
 				// Push formateed field and direction to array
 				arr.push({
-					field: field.toUpperCase(),
+					field: safeFieldName,
 					direction
 				});
 
