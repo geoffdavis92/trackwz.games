@@ -1,7 +1,6 @@
 <script>
 	import { getContext, setContext } from "svelte";
 	import { MEMBERS } from "$lib/constants";
-	console.log(MEMBERS);
 
 	/** @type {import('./$types').PageData} */
 	export let data;
@@ -156,11 +155,11 @@
 		background-color: #192214;
 		background: linear-gradient(rgba(27, 20, 0, 0.808), rgba(27, 20, 0, 0.808)),
 			url("../lib/assets/images/background-pattern.jpg");
-		background-size: 70%;
+		background-size: 190%;
 	}
-	@media only screen and (max-width: 800px) {
+	@media only screen and (min-width: 800px) {
 		:global(body) {
-			background-size: 190%;
+			background-size: 70%;
 		}
 	}
 </style>
