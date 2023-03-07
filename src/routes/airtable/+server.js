@@ -67,7 +67,22 @@ export async function GET({ url }) {
 						) {
 							// Iterate through Members fields, append to data obj
 							Object.values(MEMBERS).forEach((memberFieldId) => {
-								memberData[toCamelCase(memberFieldId)] = membersRecord.get(memberFieldId);
+								// Retrieve data value
+								const dataValue = membersRecord.get(memberFieldId);
+
+								/**
+								 * Test for NaN in computed value
+								 *
+								 * If value is not a string and when parsed to a float
+								 * 	is NaN, then default to a value of zero
+								 */
+								let safeDataValue = dataValue;
+								if (typeof safeDataValue !== "string" && Number.isNaN(parseFloat(dataValue))) {
+									safeDataValue = 0;
+								}
+
+								// Assign safe data valuue to key
+								memberData[toCamelCase(memberFieldId)] = safeDataValue;
 							});
 
 							// Push member data to array
