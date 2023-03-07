@@ -121,7 +121,7 @@
 		{#each getContext("airtableData").sort(({ [MEMBERS.DAMAGE_PER_MATCH]: aDPM }, { [MEMBERS.DAMAGE_PER_MATCH]: bDPM }) => bDPM - aDPM) as member (member[MEMBERS.NAME])}
 			<tr>
 				<td class="px-4 py-1 text-left">{member[MEMBERS.NAME]}</td><td class="px-2 py-1 text-center"
-					>{Math.round(member[MEMBERS.DAMAGE_PER_MATCH])}</td
+					>{Math.round(member[MEMBERS.DAMAGE_PER_MATCH]).toLocaleString()}</td
 				>
 			</tr>
 		{/each}
@@ -155,7 +155,7 @@
 		{#each getContext("airtableData").sort(({ [MEMBERS.DAMAGE_PER_WIN]: aDPW }, { [MEMBERS.DAMAGE_PER_WIN]: bDPW }) => bDPW - aDPW) as member (member[MEMBERS.NAME])}
 			<tr>
 				<td class="px-4 py-1 text-left">{member[MEMBERS.NAME]}</td><td class="px-2 py-1 text-center"
-					>{Math.round(member[MEMBERS.DAMAGE_PER_WIN])}</td
+					>{Math.round(member[MEMBERS.DAMAGE_PER_WIN]).toLocaleString()}</td
 				>
 			</tr>
 		{/each}
