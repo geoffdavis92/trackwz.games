@@ -13,7 +13,7 @@ export const MATCHES = {
 
 // Members table fields
 export const MEMBERS = {
-	NAME: "Name",
+	NAME: "name",
 	PLAYED: "P",
 	WINS: "W",
 	KILLS: "K",
