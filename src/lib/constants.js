@@ -39,3 +39,8 @@ export const STATS = {
 	ALIVE_IN_LAST_CIRCLE: "Alive in last circle?",
 	REDEPLOYS: "Redeploys"
 };
+
+export const BOOLEAN_STRING = {
+	TRUE: "true",
+	FALSE: "false"
+};

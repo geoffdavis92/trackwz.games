@@ -1,6 +1,7 @@
 // @ts-nocheck
+import { median } from "mathjs";
 import { AIRTABLE_UTILS, MWII_BASE_ID } from "$lib/server/constants";
-import { MEMBERS } from "$lib/constants";
+import { BOOLEAN_STRING, MEMBERS } from "$lib/constants";
 import { asyncForEach, toCamelCase } from "$lib/server/utils";
 import Airtable from "airtable";
 import { AIRTABLE_API_KEY } from "$env/static/private";
@@ -20,7 +21,9 @@ const RANDOM_MEMBER_NAME = "(random)";
 export async function GET({ url }) {
 	const base = Airtable.base(MWII_BASE_ID);
 	const sortByParams = url.searchParams.get("sortBy") ?? false;
+	const filterParams = url.searchParams.get("filter") ?? false;
 	const selectConfig = {};
+	const filterConfig = {};
 	const members = [];
 
 	// Build sorting array
@@ -51,6 +54,16 @@ export async function GET({ url }) {
 
 		// Add sort criteria to select config object
 		selectConfig.sort = sortArr;
+	}
+
+	if (filterParams) {
+		const splitCriteria = filterParams.split(",");
+
+		splitCriteria
+			.map((str) => str.split(" "))
+			.forEach(([filter]) => {
+				filterConfig[filter] = true;
+			});
 	}
 
 	await new Promise(async (resolve, reject) => {
@@ -106,5 +119,23 @@ export async function GET({ url }) {
 			);
 	});
 
-	return new Response(JSON.stringify(members));
+	/**
+	 * FILTERING
+	 */
+	let filteredMembers = members;
+	if (filterConfig.outliers) {
+		const memberMatchesPlayed = members.map(({ [MEMBERS.PLAYED]: played }) => played);
+		const medianMatchesPlayed = median(memberMatchesPlayed);
+
+		filteredMembers = filteredMembers.filter(({ [MEMBERS.PLAYED]: memberMatchesPlayed }) => {
+			if (memberMatchesPlayed >= medianMatchesPlayed) {
+				return true;
+			} else {
+				return false;
+			}
+		});
+	}
+
+	// Return data
+	return new Response(JSON.stringify(filteredMembers));
 }
