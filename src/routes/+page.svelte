@@ -87,7 +87,7 @@
 		{#each getContext("airtableData").sort(({ [MEMBERS.WINS_PER_MATCH]: aWPM }, { [MEMBERS.WINS_PER_MATCH]: bWPM }) => bWPM - aWPM) as member (member[MEMBERS.NAME])}
 			<tr>
 				<td class="px-4 py-1 text-left">{member[MEMBERS.NAME]}</td><td class="px-2 py-1 text-center"
-					>{Math.round(member[MEMBERS.WINS_PER_MATCH] * 100)}%</td
+					>{(member[MEMBERS.WINS_PER_MATCH] * 100).toFixed(2)}%</td
 				>
 			</tr>
 		{/each}
