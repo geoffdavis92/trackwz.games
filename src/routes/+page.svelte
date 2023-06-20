@@ -15,11 +15,13 @@
 </svelte:head>
 
 <div>
-	<img
-		class="mx-auto pt-4 px-20 drop-shadow-[0_0_5px_rgba(255,255,255,0.5)] hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] transition-all duration-400"
-		src={img}
-		alt="Beliebers Warzone Tracker"
-	/>
+	<a href="/"
+		><img
+			class="mx-auto pt-4 px-20 drop-shadow-[0_0_5px_rgba(255,255,255,0.5)] hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] transition-all duration-400"
+			src={img}
+			alt="Beliebers Warzone Tracker"
+		/></a
+	>
 </div>
 
 <table
