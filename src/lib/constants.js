@@ -8,7 +8,8 @@ export const MATCHES = {
 	STATS: "Stats",
 	MATCH_TYPE: "Match Type",
 	RESURGENCE: "Resurgence?",
-	MINIS: "Minis?"
+	MINIS: "Minis?",
+	RANKED: "Ranked?"
 };
 
 // Members table fields
