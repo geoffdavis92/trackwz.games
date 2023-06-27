@@ -23,9 +23,24 @@
 		/></a
 	>
 </div>
+<div class="flex justify-center my-6 gap-x-6">
+	<button
+		class="w-24 bg-slate-900 hover:bg-slate-600 text-white hover:text-slate-900 font-bold py-1 px-2 border-2 border-white hover:border-slate-900 rounded text-sm shadow"
+		>All Time</button
+	>
+	<button
+		class="w-24 bg-slate-900 hover:bg-slate-600 text-white hover:text-slate-900 font-bold py-1 px-2 border-2 border-white hover:border-slate-900 rounded text-sm shadow"
+		>Season 2</button
+	>
+	<button
+		class="w-24 bg-slate-900 hover:bg-slate-600 text-white hover:text-slate-900 font-bold py-1 px-2 border-2 border-white hover:border-slate-900 rounded text-smm"
+	>
+		Season 3</button
+	>
+</div>
 
 <table
-	class="bg-slate-100 dark:bg-slate-600 dark:text-white border-collapse w-9/12 mx-auto my-6 text-lg rounded-lg shadow-[0_35px_60px_-15px_rgba(0,0,0,0.7)]"
+	class="bg-slate-100 dark:bg-slate-600 dark:text-white border-collapse w-9/12 mx-auto mb-6 text-lg rounded-lg shadow-[0_35px_60px_-15px_rgba(0,0,0,0.7)]"
 >
 	<tr>
 		<th class="px-2 py-1 bg-slate-300 dark:bg-slate-900 text-center rounded-tl-lg"
