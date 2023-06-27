@@ -7,7 +7,7 @@ export const MATCHES = {
 	TEAM_DMG: "Team dmg",
 	STATS: "Stats",
 	MATCH_TYPE: "Match Type",
-	RESURGENCE: "Resurgence? (Quads)",
+	RESURGENCE: "Resurgence?",
 	MINIS: "Minis?"
 };
 
